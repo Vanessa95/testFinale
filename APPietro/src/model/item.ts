@@ -1,5 +1,6 @@
-export class Item{
-    text: string;
-    id: number;
+export class Oggetto{
     nome :string;
+    nomePrestatario: string;
+    data : string;
+    descrizione : string;
 }
