@@ -6,14 +6,15 @@
 
 <ion-content padding>
   <h1>Oggetti Prestati</h1>
-  <ion-list *ngFor="let item of ogg">
+  <ion-list>
       <ion-item-sliding #item>
-        <ion-item>
+        <ion-item *ngFor="let item of oggetti">
           <ion-thumbnail item-start>
             <img src="../../assets/imgs/immagine.png">
           </ion-thumbnail>
-          <h2> {{item.nome}} </h2>
-          <p>Hayao Miyazaki • 1988</p>
+          <h2>{{item.nome}}</h2>
+          <p>Prestato a {{item.nomePrestatario}}</p>
+          <p>Data {{item.data}}</p>
           <button ion-button clear item-end (click)="dettaglio(item)">Dettaglio</button>
         </ion-item>
         <ion-item-options side="left">

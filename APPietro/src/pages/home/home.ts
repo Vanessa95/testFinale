@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { DettagliPage } from '../dettagli/dettagli';
 import { Oggetto } from '../../model/item';
 
@@ -8,28 +8,20 @@ import { Oggetto } from '../../model/item';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  oggetto : Oggetto[]=[];
-  ogg: any[];
+  oggetti : Oggetto[]=[];
   
-  constructor(public navCtrl: NavController) {
-    this.oggetto = [{
-      nome:'Cuscino',
-      nomePrestatario:'Franco',
-      data : '22-02-1995',
-      descrizione :'cusciono bello',
-    }]
-  
-    this.ogg =[];
-    for(let i=0; i < 6; i++){
-      this.ogg.push({
-        text: "elemento " +i,
-        id : i
-      });
-    } 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.navCtrl = navCtrl;
+      if(navParams.get('oggetto')!=null && navParams.get('oggetto')!=undefined)
+        this.oggetti.push(navParams.get('oggetto'));
   }
   dettaglio(item){
     this.navCtrl.push(DettagliPage,{
-      item : item
+      oggettoDaPassare : item
     })
+  }
+  
+  popView(){
+    this.navCtrl.pop();
   }
 }

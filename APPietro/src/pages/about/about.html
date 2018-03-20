@@ -11,24 +11,24 @@
     <ion-list>
         <ion-item>
           <ion-label floating>Nome Oggetto</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="nome"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Prestatario</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="prestatario"></ion-input>
         </ion-item>
           <ion-item>
               <ion-label floating>Data prestito oggetto</ion-label>
-              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
           </ion-item>
        <ion-item>
           <ion-label floating>Descrizione</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="descrizione"></ion-input>
       </ion-item>
       </ion-list>
       <ion-label>Foto</ion-label>
       <div class="sposta">
       <button ion-button round outline color="danger" >Modifica</button>
-      <button ion-button round outline color="secondary">Salva</button>
+      <button ion-button round outline color="secondary" (click)="salva(nome,prestatario,data,descrizione)">Salva</button>
     </div>
 </ion-content>
