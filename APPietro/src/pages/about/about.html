@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Inserimento oggetto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Inserire/Modificare oggetto</h1>
+    <ion-list>
+        <ion-item>
+          <ion-label floating>Nome Oggetto</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Prestatario</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+          <ion-item>
+              <ion-label floating>Data prestito oggetto</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item>
+       <ion-item>
+          <ion-label floating>Descrizione</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+      </ion-list>
+      <ion-label>Foto</ion-label>
+      <div class="sposta">
+      <button ion-button round outline color="danger" >Modifica</button>
+      <button ion-button round outline color="secondary">Salva</button>
+    </div>
+</ion-content>
