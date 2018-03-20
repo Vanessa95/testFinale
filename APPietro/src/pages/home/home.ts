@@ -14,7 +14,6 @@ export class HomePage {
         text: "elemento " +i,
         id : i
       });
-
     } 
   }
 }
