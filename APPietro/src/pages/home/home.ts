@@ -9,16 +9,12 @@ export class HomePage {
   items: any[];
   constructor(public navCtrl: NavController) {
     this.items =[];
-    for(let i=0; i< 10; i++){
+    for(let i=0; i < 10; i++){
       this.items.push({
-        text: "elemento" +1,
-        id :i
+        text: "elemento " +i,
+        id : i
       });
 
     } 
   }
-  inserisci(item){
-    alert(item.text);
-  }
-
 }
