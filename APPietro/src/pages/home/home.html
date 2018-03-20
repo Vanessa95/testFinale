@@ -10,10 +10,11 @@
       <ion-item-sliding #item>
         <ion-item>
           <ion-thumbnail item-start>
-            <img src="img/thumbnail-totoro.png">
+            <img src="https://i.ytimg.com/vi/lJc7kv-IYIg/hqdefault.jpg">
           </ion-thumbnail>
-          <h2>{{item.text}}</h2>
+          <h2>Cuscino</h2>
           <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="dettaglio(item)">Dettaglio</button>
         </ion-item>
         <ion-item-options side="left">
           <button ion-button (click)="archive(item)">
