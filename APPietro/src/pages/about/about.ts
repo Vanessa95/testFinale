@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Oggetto } from '../../model/item';
 import { HomePage } from '../home/home';
+import { NativeStorage } from '@ionic-native/native-storage';
 //import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ServizioProvider } from '../../providers/servizio/servizio';
 
 
 @Component({
@@ -13,20 +15,31 @@ export class AboutPage {
   //base64Image: any;
   //photos: any;
   oggetto : Oggetto;
+  oggetti: Oggetto[];
 
-  constructor(public navCtrl: NavController, ) {
+  constructor(public navCtrl: NavController, private nativeStorage : NativeStorage, public servizioProvider :ServizioProvider) {
     this.navCtrl = navCtrl;
+    this.oggetti = [];
+    this.oggetto = new Oggetto();
   }
-  salva(nome,prestatario,data,descrizione){
+  salva(nome,prestatario,data,descrizione, scelta){
     this.oggetto = {
       nome: nome,
       nomePrestatario: prestatario,
       data : data,
-      descrizione : descrizione
+      descrizione : descrizione,
+      scelta : scelta
     };
+    //this.oggetti.push(this.oggetto);
+    this.servizioProvider.setOgg(this.oggetto);
+    this.nativeStorage.setItem('oggetti', this.oggetti);
+    
     //this.navCtrl.parent.select(0);
-    this.navCtrl.push(HomePage,{
-      oggetto: this.oggetto
+    this.navCtrl.push(HomePage /* ,{ oggetto: this.oggetto} */);
+  }
+  ionViewDidLoad(){
+    this.servizioProvider.getOgg().subscribe((ciao)=>{
+      this.oggetti= ciao;
     });
   }
   // takePhoto(){

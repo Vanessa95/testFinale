@@ -3,4 +3,5 @@ export class Oggetto{
     nomePrestatario: string;
     data : string;
     descrizione : string;
+    scelta: boolean;
 }
