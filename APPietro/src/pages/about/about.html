@@ -27,6 +27,19 @@
       </ion-item>
       </ion-list>
       <ion-label>Foto</ion-label>
+      <!--<button ion-button full (click)="takePhoto()">
+        <ion-icon name="camera"></ion-icon>Photo
+      </button>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 *ngFor="let photo of photos; let id = index">
+            <ion-card class="block">
+              <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+              <img [src]="photo" *ngIf="photo" />
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>-->
       <div class="sposta">
       <button ion-button round outline color="secondary" (click)="salva(nome,prestatario,data,descrizione)">Salva</button>
     </div>

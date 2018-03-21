@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DettagliPage } from '../dettagli/dettagli';
 import { Oggetto } from '../../model/item';
+import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,10 @@ export class HomePage {
       oggettoDaPassare : item
     })
   }
-  
+  modifica(item){
+    this.navCtrl.push(AboutPage,{
+    })
+  }
   popView(){
     this.navCtrl.pop();
   }
