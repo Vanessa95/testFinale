@@ -14,7 +14,6 @@ export class ServizioProvider {
  ogg : Oggetto[];
   constructor() {
     this.ogg = [];
-    console.log('Hello ServizioProvider Provider');
   }
  getOgg(){
    return of (this.ogg);

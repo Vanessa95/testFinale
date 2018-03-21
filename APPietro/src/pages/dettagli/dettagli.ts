@@ -17,7 +17,8 @@ import { Oggetto } from '../../model/item';
 export class DettagliPage {
 
   item: Oggetto;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams) {
     this.navCtrl = navCtrl;
     this.item = navParams.get('oggettoDaPassare');
   }

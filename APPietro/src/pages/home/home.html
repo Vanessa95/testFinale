@@ -6,9 +6,9 @@
 
 <ion-content padding>
   <h1>Oggetti Prestati</h1>
-  <ion-list>
-      <ion-item-sliding #item>
-        <ion-item *ngFor="let item of oggetti" color="{}item.scelta?secondary:light{}">
+  <ion-list *ngIf="oggetti">
+      <ion-item-sliding *ngFor="let item of oggetti">
+        <ion-item  color="{{item.scelta ? 'secondary' : 'danger'}}">
           <ion-thumbnail item-start>
             <img src="../../assets/imgs/immagine.png">
           </ion-thumbnail>
@@ -22,8 +22,7 @@
             <ion-icon name="brush"></ion-icon>Modifica
           </button>
         </ion-item-options>
-    
-        <ion-item-options side="right">
+        <ion-item-options side="right" >
           <button ion-button expandable color="danger" (click)="mancante(item)">Mancante</button>
           <button ion-button color="secondary" (click)="restituito(item)">Restituito</button>
         </ion-item-options>

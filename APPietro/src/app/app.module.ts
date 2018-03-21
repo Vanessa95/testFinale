@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativeStorage} from '@ionic-native/native-storage';
 import { DettagliPage } from '../pages/dettagli/dettagli';
 import { ServizioProvider } from '../providers/servizio/servizio';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ServizioProvider } from '../providers/servizio/servizio';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ServizioProvider,
-    NativeStorage
+    NativeStorage,
+    Camera
   ]
 })
 export class AppModule {}
